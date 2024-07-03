@@ -46,14 +46,26 @@ This project is a live streaming platform where users can create, view, and mana
 
 # User Endpoints
 Register a new user: POST /api/register/
+
 Request body: { "username": "user", "password": "password", "email": "email@example.com" }
+
 Obtain authentication token: POST /api/token/
+
 Request body: { "username": "user", "password": "password" }
+
 Response: { "token": "token", "user_id": 1, "email": "email@example.com" }
-Live Stream Endpoints
+
+# Live Stream Endpoints
+
 List active live streams: GET /api/streams/
+
 Create a live stream: POST /api/streams/create/ (Authenticated)
+
 Request body: { "title": "Stream Title", "description": "Stream Description" }
-Retrieve, update, or delete a live stream: GET, PUT, DELETE /api/streams/<int:pk>/ (Authenticated)
-Authentication
+
+
+Retrieve /api/streams/<int:pk>/ (Authenticated)
+
+## Authentication
+
 The project uses token-based authentication provided by Django Rest Framework's built-in token authentication. Obtain a token by posting the user's credentials to the /api/token/ endpoint.
